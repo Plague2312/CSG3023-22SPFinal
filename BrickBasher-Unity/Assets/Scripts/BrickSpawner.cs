@@ -34,10 +34,9 @@ public class BrickSpawner : MonoBehaviour
         {
             for(int x=0; x < 7; x++)
             {
-                Vector3 pos = new Vector3(x * brickPadding.x , y * brickPadding.y, 0); 
-              
-                brickGo = Instantiate.brickPrefab; 
-              
+                Vector3 pos = new Vector3(x * brickPadding.x , y * brickPadding.y, 0);
+                
+                GameObject brickGo = Instantiate<GameObject>(brickPrefab); // Instatiate is a method with parameters. In the given context use it to spawn bricks repeatedly with the given object and position.
                 brickGo.transform.parent = transform; 
                 brickGo.transform.localPosition = pos; 
 
